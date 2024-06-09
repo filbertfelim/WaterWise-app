@@ -160,11 +160,10 @@ const Analytics: React.FC = () => {
 
       if (formattedDailyAverages.length > 0) {
         const earliestDate = formattedDailyAverages[0].date;
-        const latestDate = formattedDailyAverages[6].date;
+        const latestDate =
+          formattedDailyAverages[formattedDailyAverages.length - 1].date;
         setDateRange(`${earliestDate} - ${latestDate}`);
-      }
 
-      if (labels.length > 0 && chartData.length > 0) {
         setChartConfigData({
           labels: labels,
           datasets: [
